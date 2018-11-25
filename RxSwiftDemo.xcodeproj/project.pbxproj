@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		093A5B2D0F02BB1D76430194 /* Pods_RxSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70E65CAE866F79FB7BE54A1 /* Pods_RxSwiftDemo.framework */; };
+		41D4FAAE21A99E6000EA0B01 /* ReactiveExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D4FAAD21A99E6000EA0B01 /* ReactiveExtension.swift */; };
+		41D4FAB321AA2FD900EA0B01 /* SignupProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D4FAB221AA2FD900EA0B01 /* SignupProtocols.swift */; };
+		41D4FAB621AAB5E000EA0B01 /* BindingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D4FAB521AAB5E000EA0B01 /* BindingExtensions.swift */; };
+		41D4FAB821AAC1C600EA0B01 /* DefaultImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D4FAB721AAC1C600EA0B01 /* DefaultImplementations.swift */; };
+		41D4FABB21AAC8CF00EA0B01 /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D4FABA21AAC8CF00EA0B01 /* String+URL.swift */; };
 		B225817B21A7BC0E004F874A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B225817A21A7BC0E004F874A /* AppDelegate.swift */; };
 		B225817D21A7BC0E004F874A /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B225817C21A7BC0E004F874A /* RootViewController.swift */; };
 		B225818021A7BC0E004F874A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B225817E21A7BC0E004F874A /* Main.storyboard */; };
@@ -36,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41D4FAAD21A99E6000EA0B01 /* ReactiveExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveExtension.swift; sourceTree = "<group>"; };
+		41D4FAB221AA2FD900EA0B01 /* SignupProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupProtocols.swift; sourceTree = "<group>"; };
+		41D4FAB521AAB5E000EA0B01 /* BindingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtensions.swift; sourceTree = "<group>"; };
+		41D4FAB721AAC1C600EA0B01 /* DefaultImplementations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImplementations.swift; sourceTree = "<group>"; };
+		41D4FABA21AAC8CF00EA0B01 /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
 		6000E7198576D3590419CC5C /* Pods-RxSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A6EF0C35A06D340314C31198 /* Pods-RxSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B225817721A7BC0E004F874A /* RxSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +92,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41D4FAAC21A99E2700EA0B01 /* RxExtension */ = {
+			isa = PBXGroup;
+			children = (
+				41D4FAAD21A99E6000EA0B01 /* ReactiveExtension.swift */,
+			);
+			path = RxExtension;
+			sourceTree = "<group>";
+		};
+		41D4FAAF21AA2F6D00EA0B01 /* Moudles */ = {
+			isa = PBXGroup;
+			children = (
+				41D4FAB121AA2FA200EA0B01 /* GitHubSignup */,
+				41D4FAB021AA2F8200EA0B01 /* FirstRxSwift */,
+			);
+			path = Moudles;
+			sourceTree = "<group>";
+		};
+		41D4FAB021AA2F8200EA0B01 /* FirstRxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				B22581AA21A7D452004F874A /* FirstRxSwifController.swift */,
+			);
+			path = FirstRxSwift;
+			sourceTree = "<group>";
+		};
+		41D4FAB121AA2FA200EA0B01 /* GitHubSignup */ = {
+			isa = PBXGroup;
+			children = (
+				41D4FAB221AA2FD900EA0B01 /* SignupProtocols.swift */,
+				41D4FAB521AAB5E000EA0B01 /* BindingExtensions.swift */,
+				41D4FAB721AAC1C600EA0B01 /* DefaultImplementations.swift */,
+			);
+			path = GitHubSignup;
+			sourceTree = "<group>";
+		};
+		41D4FAB921AAC8A500EA0B01 /* NormalExtension */ = {
+			isa = PBXGroup;
+			children = (
+				41D4FABA21AAC8CF00EA0B01 /* String+URL.swift */,
+			);
+			path = NormalExtension;
+			sourceTree = "<group>";
+		};
 		5A2AA0543A812B98268C62BC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,9 +169,11 @@
 		B225817921A7BC0E004F874A /* RxSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				41D4FAAF21AA2F6D00EA0B01 /* Moudles */,
+				41D4FAB921AAC8A500EA0B01 /* NormalExtension */,
+				41D4FAAC21A99E2700EA0B01 /* RxExtension */,
 				B225817A21A7BC0E004F874A /* AppDelegate.swift */,
 				B225817C21A7BC0E004F874A /* RootViewController.swift */,
-				B22581AA21A7D452004F874A /* FirstRxSwifController.swift */,
 				B225817E21A7BC0E004F874A /* Main.storyboard */,
 				B225818121A7BC0F004F874A /* Assets.xcassets */,
 				B225818321A7BC0F004F874A /* LaunchScreen.storyboard */,
@@ -329,8 +384,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41D4FABB21AAC8CF00EA0B01 /* String+URL.swift in Sources */,
+				41D4FAB821AAC1C600EA0B01 /* DefaultImplementations.swift in Sources */,
 				B225817D21A7BC0E004F874A /* RootViewController.swift in Sources */,
+				41D4FAB621AAB5E000EA0B01 /* BindingExtensions.swift in Sources */,
+				41D4FAB321AA2FD900EA0B01 /* SignupProtocols.swift in Sources */,
 				B22581AB21A7D452004F874A /* FirstRxSwifController.swift in Sources */,
+				41D4FAAE21A99E6000EA0B01 /* ReactiveExtension.swift in Sources */,
 				B225817B21A7BC0E004F874A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

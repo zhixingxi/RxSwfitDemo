@@ -92,17 +92,21 @@ extension FirstRxSwifController {
         
         let usernameValid = tfUsername.rx.text.orEmpty
             .map { $0.count >= 5 }
+            .distinctUntilChanged() // 阻止 Observable 发出相同的元素
             .share(replay: 1)
         
         let passwordValid = tfPassword.rx.text.orEmpty
             .map { $0.count >= 6 }
+            .distinctUntilChanged()
             .share(replay: 1)
         
         let allValid = Observable.combineLatest(
             usernameValid,
             passwordValid)
             .map{ $0 && $1}
+            .distinctUntilChanged()
             .share(replay: 1)
+        
         
         _ = usernameValid
             .takeUntil(self.rx.deallocated)
@@ -125,11 +129,21 @@ extension FirstRxSwifController {
             .map({ (valid) -> UIColor in
                 return valid ? UIColor.green : UIColor.gray
             })
-            .subscribe(onNext: { [weak self](color) in
-                self?.btLogin.backgroundColor = color
-                }, onError: nil, onCompleted: nil, onDisposed: {
-                    print("释放")
-            })
+            .bind(to: btLogin.rx.backgroundColor)
+        
+        
+        usernameValid
+            .debug("usernameValid")
+            .subscribe()
+            .disposed(by: disposeBag)
+        passwordValid
+            .debug("passwordValid")
+            .subscribe()
+            .disposed(by: disposeBag)
+        allValid
+            .debug("allValid")
+            .subscribe()
+            .disposed(by: disposeBag)
     }
     
 }
