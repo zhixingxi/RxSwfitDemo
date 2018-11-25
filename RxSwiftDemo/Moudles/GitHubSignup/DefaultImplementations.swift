@@ -16,7 +16,7 @@ class GitHubDefaultValidationService {
     
     let API: GitHubAPI
     
-    static let sharedValidationService = GitHubDefaultValidationService(API: GitHubDefaultAPI.sharedAPI)
+    static let sharedValidationService = GitHubDefaultValidationService(API: GitHubDefaultAPI.sharedaApi)
 
     init(API: GitHubAPI) {
         self.API = API
