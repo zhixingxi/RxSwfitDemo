@@ -15,6 +15,8 @@ import RxCocoa
 class GitHubDefaultValidationService {
     
     let API: GitHubAPI
+    
+    static let sharedValidationService = GitHubDefaultValidationService(API: GitHubDefaultAPI.sharedAPI)
 
     init(API: GitHubAPI) {
         self.API = API
