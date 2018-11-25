@@ -47,6 +47,31 @@
                                             <segue destination="aw6-5o-ShM" kind="push" id="iYA-ks-vig"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="50" id="eak-ff-AaA">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eak-ff-AaA" id="ahN-Op-I9U">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GitHubSignupViewController1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lh-0w-KoV">
+                                                    <rect key="frame" x="15" y="0.0" width="311" height="49.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3lh-0w-KoV" firstAttribute="leading" secondItem="ahN-Op-I9U" secondAttribute="leading" constant="15" id="6xF-xq-hc4"/>
+                                                <constraint firstItem="3lh-0w-KoV" firstAttribute="top" secondItem="ahN-Op-I9U" secondAttribute="top" id="eZr-lm-tIM"/>
+                                                <constraint firstAttribute="bottom" secondItem="3lh-0w-KoV" secondAttribute="bottom" id="ny9-wz-J6b"/>
+                                                <constraint firstAttribute="trailing" secondItem="3lh-0w-KoV" secondAttribute="trailing" constant="15" id="xJc-dt-4kF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="0iN-f5-ugp" kind="push" id="mfB-bO-Ac0"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -60,6 +85,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cvk-aM-oI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="822" y="107"/>
+        </scene>
+        <!--GitHubSignup-->
+        <scene sceneID="6ro-l5-3ST">
+            <objects>
+                <viewController id="0iN-f5-ugp" customClass="GitHubSignupViewController1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UJz-tL-guX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="sCC-bi-NjI"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="GitHubSignup" id="O2c-b0-kOc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Dl-Es-PZw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2033" y="357"/>
         </scene>
         <!--FirstRxSwift-->
         <scene sceneID="5Tp-On-ddw">
@@ -159,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atg-Y4-AYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1664.8" y="106.59670164917542"/>
+            <point key="canvasLocation" x="2025" y="-513"/>
         </scene>
         <!--RxSwift-->
         <scene sceneID="GUI-MF-QJa">

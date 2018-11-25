@@ -25,28 +25,28 @@ class GitHubDefaultValidationService {
 }
 
 extension GitHubDefaultValidationService: GitHubValidationService {
-    func validateUsername(username: String) -> Observable<ValidtionResult> {
+    func validateUsername(username: String) -> Observable<ValidationResult> {
         if username.isEmpty {
             return .just(.empty)
         }
         
         if username.rangeOfCharacter(from: CharacterSet.alphanumerics.inverted) != nil {
-            return Observable.just(ValidtionResult.failed(message: "Username can only contain numbers or digits"))
+            return Observable.just(ValidationResult.failed(message: "Username can only contain numbers or digits"))
         }
         
-        let loadingValue = ValidtionResult.validing
+        let loadingValue = ValidationResult.validing
         return API
             .usernameAvailable(username: username)
-            .map({ (available) -> ValidtionResult in
+            .map({ (available) -> ValidationResult in
                 if available {
-                    return ValidtionResult.ok(message: "Username available")
+                    return ValidationResult.ok(message: "Username available")
                 }
-                return ValidtionResult.failed(message: "Username already taken")
+                return ValidationResult.failed(message: "Username already taken")
             })
             .startWith(loadingValue)
     }
     
-    func calidatePassword(password: String) -> ValidtionResult {
+    func validatePassword(password: String) -> ValidationResult {
         let passwordCount = password.count
         if passwordCount == 0 {
             return .empty
@@ -57,7 +57,7 @@ extension GitHubDefaultValidationService: GitHubValidationService {
         return .ok(message: "Password acceptable")
     }
     
-    func validateRepeatedPassword(password: String, repeatPassword: String) -> ValidtionResult {
+    func validateRepeatedPassword(password: String, repeatPassword: String) -> ValidationResult {
         if repeatPassword.count == 0 {
             return .empty
         }
@@ -65,7 +65,7 @@ extension GitHubDefaultValidationService: GitHubValidationService {
         if repeatPassword == password  {
             return .ok(message: "Password repeated")
         }
-        return ValidtionResult.failed(message: "Password different")
+        return ValidationResult.failed(message: "Password different")
     }
 }
 

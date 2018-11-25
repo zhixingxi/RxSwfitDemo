@@ -11,7 +11,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-extension ValidtionResult: CustomStringConvertible {
+extension ValidationResult: CustomStringConvertible {
     var description: String {
         switch self {
         case .ok(let message):
@@ -32,7 +32,7 @@ struct ValidationColors {
 }
 
 
-extension ValidtionResult {
+extension ValidationResult {
     var textColor: UIColor {
         switch self {
         case .ok(_):
@@ -47,7 +47,7 @@ extension ValidtionResult {
 
 
 extension Reactive where Base: UILabel {
-    var validationResult: Binder<ValidtionResult> {
+    var validationResult: Binder<ValidationResult> {
         return Binder(self.base, binding: { (label, result) in
             label.textColor = result.textColor
             label.text = result.description

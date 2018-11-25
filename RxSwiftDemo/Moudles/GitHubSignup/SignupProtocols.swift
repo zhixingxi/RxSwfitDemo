@@ -9,14 +9,14 @@
 import RxSwift
 import RxCocoa
 
-enum ValidtionResult {
+enum ValidationResult {
     case ok(message: String)
     case empty
     case validing
     case failed(message: String)
 }
 
-extension ValidtionResult {
+extension ValidationResult {
     var isValid: Bool {
         switch self {
         case .ok(_):
@@ -39,7 +39,7 @@ protocol GitHubAPI {
 
 /// 有效性验证协议
 protocol GitHubValidationService {
-    func validateUsername(username: String) -> Observable<ValidtionResult>
-    func calidatePassword(password: String) -> ValidtionResult
-    func validateRepeatedPassword(password: String, repeatPassword: String) -> ValidtionResult
+    func validateUsername(username: String) -> Observable<ValidationResult>
+    func validatePassword(password: String) -> ValidationResult
+    func validateRepeatedPassword(password: String, repeatPassword: String) -> ValidationResult
 }
