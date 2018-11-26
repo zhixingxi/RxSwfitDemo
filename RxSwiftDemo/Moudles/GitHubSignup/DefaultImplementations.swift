@@ -90,7 +90,7 @@ extension GitHubDefaultAPI: GitHubAPI {
         let request = URLRequest(url: url)
         return self.urlSession.rx.response(request: request)
             .map({ (pair) -> Bool in
-                return pair.response.statusCode != 404
+                return pair.response.statusCode == 404
             })
             .catchErrorJustReturn(false)
     }

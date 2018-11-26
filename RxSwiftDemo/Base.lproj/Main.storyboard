@@ -89,7 +89,7 @@
         <!--GitHubSignup-->
         <scene sceneID="6ro-l5-3ST">
             <objects>
-                <viewController id="0iN-f5-ugp" customClass="GitHubSignupViewController1" sceneMemberID="viewController">
+                <viewController id="0iN-f5-ugp" customClass="GitHubSignupController1" customModule="RxSwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UJz-tL-guX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -40,6 +40,36 @@ class GitHubSignupController1: UIViewController {
                 self?.btSignup.alpha = valid ? 1 : 0.5
             })
             .disposed(by: disposeBag)
+        
+        viewModel.validateUsername
+            .bind(to: lbUsernameTip.rx.validationResult)
+            .disposed(by: disposeBag)
+        
+        viewModel.validatePassword
+            .bind(to: lbPasswordTip.rx.validationResult)
+            .disposed(by: disposeBag)
+        
+        viewModel.validatePasswordRepeat
+            .bind(to: lbRepeatPasswordTip.rx.validationResult)
+            .disposed(by: disposeBag)
+        
+        viewModel.signingIn
+            .bind(to: acSigningUp.rx.isAnimating)
+            .disposed(by: disposeBag)
+        
+        viewModel.signedIn
+            .subscribe(onNext: { (signed) in
+                print("User signed in \(signed)")
+            })
+            .disposed(by: disposeBag)
+    
+        let tapBackground = UITapGestureRecognizer()
+        tapBackground.rx.event
+            .subscribe(onNext: { [weak self] _ in
+                self?.view.endEditing(true)
+            })
+            .disposed(by: disposeBag)
+        view.addGestureRecognizer(tapBackground)
     }
 
 }
